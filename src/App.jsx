@@ -38,7 +38,9 @@ function App() {
           newY = parseInt(Math.random() * 10);
         }
         setComputerTurnPick([newX, newY]);
-        setPlayerTurn(1);
+        if (userGrid[newX][newY] === 0) {
+          setPlayerTurn(1);
+        }
       }, 1000);
     }
   }, [gameWinner, playerTurn, setComputerTurnPick, setPlayerTurn, userGrid]);

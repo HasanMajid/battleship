@@ -59,7 +59,6 @@ function CompSquare({ x, y, gridAtom }) {
                         newGrid[x][y] = 10;
                         return newGrid
                     })
-                    setPlayerTurn(2)
                 } else {
                     setGrid((prevGrid) => {
                         const newGrid = JSON.parse(JSON.stringify(prevGrid));

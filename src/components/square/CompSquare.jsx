@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAtom } from "jotai"
-import { gameStartAtom, playerTurnAtom, resetGameAtom, useCheckWinner } from "../../GameState"
+import { gameStartAtom, playerTurnAtom, resetGameAtom, gameWinnerAtom } from "../../GameState"
 import styles from "./Square.module.css"
 
 function CompSquare({ x, y, gridAtom }) {
@@ -10,6 +10,7 @@ function CompSquare({ x, y, gridAtom }) {
     const [symbol, setSymbol] = useState(<></>);
     const [playerTurn, setPlayerTurn] = useAtom(playerTurnAtom);
     const [reset, setReset] = useAtom(resetGameAtom);
+    const [gameWinner, setGameWinner] = useAtom(gameWinnerAtom);
     const [color, setColor] = useState(null);
     
     useEffect(() => {
@@ -51,7 +52,7 @@ function CompSquare({ x, y, gridAtom }) {
         <div
             className={styles.square}
             style={{ borderColor: color, backgroundColor: value === 20 ? "gray" : color }}
-            onClick={(gameStart && playerTurn === 1) ? () => {
+            onClick={(gameStart && playerTurn === 1 && gameWinner === null) ? () => {
                 if (grid[x][y] > 0 && grid[x][y] < 10) {
                     console.log(grid[x][y])
                     setGrid((prevGrid) => {

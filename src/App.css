@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  width: fit-content;
+  margin: auto;
+  font-size: 3rem;
+}
+
+h2 {
+  width: fit-content;
+  margin: auto;
+  font-size: 2rem;
+  color: rgb(15, 122, 205);
+}
+
+#game-board {
+  width: fit-content;
+  display: flex;
+  gap: 5rem;
+  margin-inline: auto;
+  margin-top: 2rem
+}
+
+button {
+  font-size: x-large;
+  width: fit-content;
+  border: 2px black solid;
+  background-color: aliceblue;
+  cursor: pointer;
+  margin-inline: 0.5rem;
+}

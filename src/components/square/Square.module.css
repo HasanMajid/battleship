@@ -1,0 +1,10 @@
+.square {
+    width: 2em;
+    height: 2rem;
+    border: 2px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}

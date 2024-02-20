@@ -9,6 +9,7 @@ const userShip5Atom = atom([[5, 3]])
 const userShip6Atom = atom([[2, 6], [3, 6], [4, 6]])
 export const selectedShipIDAtom = atom(null);
 export const selectedShipStartAtom = atom(null);
+export const logsAtom = atom([]);
 
 export const gameStartAtom = atom(false);
 export const gameWinnerAtom = atom(null);
@@ -141,6 +142,7 @@ export const useResetGame = () => {
     const [, setGameStart] = useAtom(gameStartAtom);
     const [reset, setReset] = useAtom(resetGameAtom);
     const [, setWinner] = useAtom(gameWinnerAtom);
+    const [logs, setLogs] = useAtom(logsAtom);
 
     useEffect(() => {
         if (reset === true) {
@@ -154,6 +156,7 @@ export const useResetGame = () => {
             setReset(false)
             setWinner(null)
             setGameStart(false)
+            setLogs([]);
         }
-    }, [reset, setComputerGrid, setGameStart, setReset, setUserGrid, setUserShip1, setUserShip2, setUserShip3, setUserShip4, setUserShip5, setUserShip6, setWinner])
+    }, [reset, setComputerGrid, setGameStart, setLogs, setReset, setUserGrid, setUserShip1, setUserShip2, setUserShip3, setUserShip4, setUserShip5, setUserShip6, setWinner])
 }

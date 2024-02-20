@@ -25,7 +25,6 @@ h2 {
 
 button {
   font-size: x-large;
-  /* height: 2.5rem; */
   border: 2px black solid;
   cursor: pointer;
   margin-inline: 0.5rem;

@@ -5,6 +5,7 @@ import {
     playerTurnAtom,
     resetGameAtom,
     gameWinnerAtom,
+    logsAtom
 } from "../../GameState";
 import styles from "./Square.module.css";
 
@@ -16,6 +17,7 @@ function CompSquare({ x, y, gridAtom }) {
     const [playerTurn, setPlayerTurn] = useAtom(playerTurnAtom);
     const [reset, setReset] = useAtom(resetGameAtom);
     const [gameWinner, setGameWinner] = useAtom(gameWinnerAtom);
+    const [logs, setLogs] = useAtom(logsAtom);
     const [color, setColor] = useState(null);
 
     useEffect(() => {
@@ -70,12 +72,22 @@ function CompSquare({ x, y, gridAtom }) {
                                 newGrid[x][y] = 10;
                                 return newGrid;
                             });
+                            setLogs((prevLogs) => {
+                                const newLogs = [...prevLogs];
+                                newLogs.push({message: "You have hit a part of a ship, go again!", color: "blue"});
+                                return newLogs
+                            })
                         } else {
                             setGrid((prevGrid) => {
                                 const newGrid = JSON.parse(JSON.stringify(prevGrid));
                                 newGrid[x][y] = 20;
                                 return newGrid;
                             });
+                            setLogs((prevLogs) => {
+                                const newLogs = [...prevLogs];
+                                newLogs.push({message: "You missed! Computer turn.", color: "blue"});
+                                return newLogs
+                            })
                             setPlayerTurn(2);
                         }
                     }

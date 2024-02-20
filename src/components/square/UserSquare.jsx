@@ -29,7 +29,6 @@ function UserSquare({ x, y }) {
     const [symbol, setSymbol] = useState(<></>);
     const [color, setColor] = useState(null);
 
-
     useEffect(() => {
         setValue(grid[x][y]);
     }, [grid, x, y, reset]);
@@ -69,19 +68,19 @@ function UserSquare({ x, y }) {
             setSymbol(<div style={{ fontWeight: "bold" }}>.</div>);
         }
         if (value === 1) {
-            setColor("blue")
+            setColor("blue");
         } else if (value === 2) {
-            setColor("green")
+            setColor("green");
         } else if (value === 3) {
-            setColor("red")
+            setColor("red");
         } else if (value === 4) {
-            setColor("aqua")
+            setColor("aqua");
         } else if (value === 5) {
-            setColor("black")
+            setColor("white");
         } else if (value === 6) {
-            setColor("pink")
+            setColor("pink");
         } else {
-            setColor(null)
+            setColor(null);
         }
     }, [value, setSymbol]);
 
@@ -185,7 +184,7 @@ function UserSquare({ x, y }) {
         <div
             className={styles.square}
             style={{
-                borderColor: color,
+                borderColor: color ? "white" : "gray",
                 backgroundColor: value === 20 ? "gray" : color,
             }}
             onPointerDown={

@@ -39,21 +39,21 @@ function CompSquare({ x, y, gridAtom }) {
             setSymbol(<></>);
         }
 
-        if (value === 1) {
-            setColor("blue");
-        } else if (value === 2) {
-            setColor("green");
-        } else if (value === 3) {
-            setColor("red");
-        } else if (value === 4) {
-            setColor("aqua");
-        } else if (value === 5) {
-            setColor("white");
-        } else if (value === 6) {
-            setColor("pink");
-        } else {
-            setColor(null);
-        }
+        // if (value === 1) {
+        //     setColor("blue");
+        // } else if (value === 2) {
+        //     setColor("green");
+        // } else if (value === 3) {
+        //     setColor("red");
+        // } else if (value === 4) {
+        //     setColor("aqua");
+        // } else if (value === 5) {
+        //     setColor("white");
+        // } else if (value === 6) {
+        //     setColor("pink");
+        // } else {
+        //     setColor(null);
+        // }
     }, [value, setSymbol]);
 
     return (

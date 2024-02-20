@@ -28,6 +28,7 @@ function CompSquare({ x, y, gridAtom }) {
     useEffect(() => {
         setSymbol(<></>);
         setReset(false);
+        setClicked(false);
     }, [reset, setReset]);
 
     useEffect(() => {

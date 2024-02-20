@@ -64,6 +64,8 @@ function App() {
       >
         <button
           id="start-btn"
+          type="button"
+          style={{padding: "0.3rem"}}
           onClick={() => {
             if (gameStart === false) {
               setGameStart(true);
@@ -74,6 +76,8 @@ function App() {
         </button>
         <button
           id="reset-btn"
+          type="button"
+          style={{padding: "0.3rem"}}
           onClick={() => {
             setReset(true);
           }}

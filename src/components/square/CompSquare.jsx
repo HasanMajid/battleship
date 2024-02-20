@@ -19,6 +19,7 @@ function CompSquare({ x, y, gridAtom }) {
     const [gameWinner, setGameWinner] = useAtom(gameWinnerAtom);
     const [logs, setLogs] = useAtom(logsAtom);
     const [color, setColor] = useState(null);
+    const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         setValue(grid[x][y]);
@@ -63,7 +64,7 @@ function CompSquare({ x, y, gridAtom }) {
                 backgroundColor: value === 20 ? "gray" : color,
             }}
             onClick={
-                gameStart && playerTurn === 1 && gameWinner === null
+                gameStart && playerTurn === 1 && gameWinner === null && clicked === false
                     ? () => {
                         if (grid[x][y] > 0 && grid[x][y] < 10) {
                             console.log(grid[x][y]);
@@ -90,6 +91,7 @@ function CompSquare({ x, y, gridAtom }) {
                             })
                             setPlayerTurn(2);
                         }
+                        setClicked(true);
                     }
                     : null
             }
